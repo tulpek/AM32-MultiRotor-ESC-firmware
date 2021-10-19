@@ -140,32 +140,32 @@
 char dir_reversed = 0;
 char comp_pwm = 1;
 char VARIABLE_PWM = 1;
-char bi_direction = 0;
-char stuck_rotor_protection = 1;	// Turn off for Crawlers
-char brake_on_stop = 0;
-char stall_protection = 0;
-char use_sin_start = 0;
+char bi_direction = 1;
+char stuck_rotor_protection = 0;	// Turn off for Crawlers
+char brake_on_stop = 1;
+char stall_protection = 1;
+char use_sin_start = 1`;
 char THIRTY_TWO_MS_TLM = 0;
 
 char advance_level = 2;			// 7.5 degree increments 0 , 7.5, 15, 22.5)
-uint16_t motor_kv = 2000;
+uint16_t motor_kv = 1400;
 char motor_poles = 14;
-//add Startup Power
-//Add PWM Frequency
-//Add Beep Volume
+add Startup Power
+Add PWM Frequency
+Add Beep Volume
 char drag_brake_strength = 10;		// Drag Brake Power
-char sine_mode_changeover_thottle_level = 5;	// Sine Startup Range
+char sine_mode_changeover_thottle_level = 15;	// Sine Startup Range
 
 char USE_HALL_SENSOR = 0;
 
 //============================= Servo Settings ==============================
-uint16_t servo_low_threshold = 1100;	// anything below this point considered 0
-uint16_t servo_high_threshold = 1900;	// anything above this point considered 2000 (max)
+uint16_t servo_low_threshold = 1000;	// anything below this point considered 0
+uint16_t servo_high_threshold = 2000;	// anything above this point considered 2000 (max)
 uint16_t servo_neutral = 1500;
 uint8_t servo_dead_band = 100;
 
 //========================= Battery Cuttoff Settings ========================
-char LOW_VOLTAGE_CUTOFF = 0;		// Turn Low Voltage CUTOFF on or off
+char LOW_VOLTAGE_CUTOFF = 1;		// Turn Low Voltage CUTOFF on or off
 uint16_t low_cell_volt_cutoff = 330;	// 3.3volts per cell
 
 //Add Car/basher mode
@@ -219,7 +219,7 @@ char VOLTAGE_DIVIDER = TARGET_VOLTAGE_DIVIDER;     // 100k upper and 10k lower r
 
 uint16_t battery_voltage;  // scale in volts * 10.  1260 is a battery voltage of 12.60
 
-char cell_count = 0;
+char cell_count = 3;
 
 char brushed_direction_set = 0;
 
@@ -401,7 +401,7 @@ int bad_count = 0;
 int dshotcommand;
 int armed_count_threshold = 1000;
 
-char armed = 0;
+char armed = 1;
 int zero_input_count = 0;
 
 int input = 0;
