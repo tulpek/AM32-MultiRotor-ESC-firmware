@@ -144,7 +144,7 @@ char bi_direction = 1;
 char stuck_rotor_protection = 0;	// Turn off for Crawlers
 char brake_on_stop = 1;
 char stall_protection = 1;
-char use_sin_start = 1`;
+char use_sin_start = 1;
 char THIRTY_TWO_MS_TLM = 0;
 
 char advance_level = 2;			// 7.5 degree increments 0 , 7.5, 15, 22.5)
@@ -219,7 +219,7 @@ char VOLTAGE_DIVIDER = TARGET_VOLTAGE_DIVIDER;     // 100k upper and 10k lower r
 
 uint16_t battery_voltage;  // scale in volts * 10.  1260 is a battery voltage of 12.60
 
-char cell_count = 3;
+char cell_count = 0;
 
 char brushed_direction_set = 0;
 
@@ -408,7 +408,7 @@ int input = 0;
 int newinput =0;
 char inputSet = 0;
 char dshot = 0;
-char servoPwm = 0;
+char servoPwm = 1;
 int zero_crosses;
 
 int zcfound = 0;
@@ -568,10 +568,10 @@ void loadEEpromSettings(){
 			   USE_HALL_SENSOR = 0;
 		   }
 	   if(eepromBuffer[40] > 4 && eepromBuffer[40] < 26){            // sine mode changeover 5-25 percent throttle
-       sine_mode_changeover_thottle_level = eepromBuffer[40];
+       sine_mode_changeover_thottle_level = 15;
 	   }
 	   if(eepromBuffer[41] > 0 && eepromBuffer[41] < 11){        // drag brake 0-10
-       drag_brake_strength = eepromBuffer[41];
+       drag_brake_strength = 10;
 	   }
 	   }
 
@@ -583,7 +583,7 @@ void loadEEpromSettings(){
 	   high_rpm_level = (40 + (motor_kv / 100)) / (16/motor_poles);
 
 	if(!comp_pwm){
-		bi_direction = 0;
+		bi_direction = 1;
 	}
 
 
