@@ -150,7 +150,7 @@ char THIRTY_TWO_MS_TLM = 0;
 char advance_level = 2;			// 7.5 degree increments 0 , 7.5, 15, 22.5)
 uint16_t motor_kv = 1400;
 char motor_poles = 14;
-add Startup Power
+Add Startup Power
 Add PWM Frequency
 Add Beep Volume
 char drag_brake_strength = 10;		// Drag Brake Power
@@ -568,10 +568,10 @@ void loadEEpromSettings(){
 			   USE_HALL_SENSOR = 0;
 		   }
 	   if(eepromBuffer[40] > 4 && eepromBuffer[40] < 26){            // sine mode changeover 5-25 percent throttle
-       sine_mode_changeover_thottle_level = 15;
+       sine_mode_changeover_thottle_level = eepromBuffer[40] + 15;
 	   }
 	   if(eepromBuffer[41] > 0 && eepromBuffer[41] < 11){        // drag brake 0-10
-       drag_brake_strength = 0;
+       drag_brake_strength = eepromBuffer[41] + 10;
 	   }
 	   }
 
