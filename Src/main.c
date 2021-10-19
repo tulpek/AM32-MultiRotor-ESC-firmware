@@ -571,7 +571,7 @@ void loadEEpromSettings(){
        sine_mode_changeover_thottle_level = 15;
 	   }
 	   if(eepromBuffer[41] > 0 && eepromBuffer[41] < 11){        // drag brake 0-10
-       drag_brake_strength = 10;
+       drag_brake_strength = 0;
 	   }
 	   }
 
