@@ -148,13 +148,13 @@ char use_sin_start = 1;
 char THIRTY_TWO_MS_TLM = 0;
 
 char advance_level = 2;			// 7.5 degree increments 0 , 7.5, 15, 22.5)
-uint16_t motor_kv = 1400;
-char motor_poles = 14;
+uint16_t motor_kv = 1900;
+char motor_poles = 4;
 Add Startup Power
 Add PWM Frequency
 Add Beep Volume
 char drag_brake_strength = 10;		// Drag Brake Power
-char sine_mode_changeover_thottle_level = 15;	// Sine Startup Range
+char sine_mode_changeover_thottle_level = 20;	// Sine Startup Range
 
 char USE_HALL_SENSOR = 0;
 
@@ -162,7 +162,7 @@ char USE_HALL_SENSOR = 0;
 uint16_t servo_low_threshold = 1000;	// anything below this point considered 0
 uint16_t servo_high_threshold = 2000;	// anything above this point considered 2000 (max)
 uint16_t servo_neutral = 1500;
-uint8_t servo_dead_band = 100;
+uint8_t servo_dead_band = 60;
 
 //========================= Battery Cuttoff Settings ========================
 char LOW_VOLTAGE_CUTOFF = 1;		// Turn Low Voltage CUTOFF on or off
